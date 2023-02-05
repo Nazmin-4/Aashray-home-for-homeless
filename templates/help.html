@@ -1,0 +1,46 @@
+{% extends "index.html" %}
+{% block body %}
+{%load static %}    
+<div class="container bootstrap snippets bootdey">
+  <div class="row">
+      <div class="col-lg-12">
+          <div class="ibox float-e-margins">
+              <div class="ibox-content">
+                  <h2>
+                      {{count}} results found for: <span class="text-navy">{{zip}}</span>
+                  </h2>
+      
+                    <div class="search-form">
+                      <form action="{% url 'helpnow' %}" method="get">
+                          <div class="input-group">
+                              <input type="text" placeholder="{{zip}}" name="zip" id="zip" class="form-control input-lg" class="form-control help">
+                              {% comment %} <div class="input-group-btn"> {% endcomment %}
+                                  <button class="btn-get-started scrollto" type="submit" >
+                                      Search
+                                  </button>
+                              </div>
+                          {% comment %} </div> {% endcomment %}
+                      </form>
+                  </div>
+                            {% for i in zpdata %}
+                      <div class="search-result">
+                          <h3><a href="/upload/{{i.ngoname}}/{{i.email}}">{{i.ngoname}}</a></h3>
+                          <p class="mt-4 mb-1" style="font-size: .77rem;"><b>Email: </b>{{i.email}}</p>
+                        
+                            <p class="mt-4 mb-1" style="font-size: .77rem;"><b>ContactNumber: </b>{{i.contactNumber}}</p>
+                        
+                            <p class="mt-4 mb-1" style="font-size: .77rem;"><b>Address: </b>{{i.address}}</p>
+                      </div>
+  
+                      <div class="hr-line-dashed"></div>
+                     
+                  
+              </div>
+          </div>
+      </div>{% endfor %}
+  </div>
+      {%if msg and not true%}
+      <h2 class="text-uppercase text-center mb-5">{{msg}}</h2>
+      {%endif%}
+</div>
+  {%endblock%}

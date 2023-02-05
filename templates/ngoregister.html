@@ -1,0 +1,81 @@
+{% extends "index.html" %}
+{% block body %}
+{%load static %}
+<section >
+    <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+  
+                <form action="{% url 'ngoregister' %}" method="post">
+                  {% csrf_token %}
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" name="ngoname" />
+                    <label class="form-label" for="form3Example1cg">Your Name</label>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form3Example3cg" class="form-control form-control-lg" name="email"/>
+                    <label class="form-label" for="form3Example3cg">Your Email</label>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example4cg" class="form-control form-control-lg" name="zipcode"/>
+                    <label class="form-label" for="form3Example4cg">zipcode</label>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example4cdg" class="form-control form-control-lg" name="phn"/>
+                    <label class="form-label" for="form3Example4cdg">ContactNumber</label>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="address"></textarea>
+                              </div>  
+                              <label class="form-label" for="exampleFormControlTextarea1">Address</label>
+                              
+                            </div>
+                    </div>
+                </div>
+                
+                <div class="form-outline mb-4">
+                    <input type="password" id="form3Example4cg" class="form-control form-control-lg" name="password"/>
+                    <label class="form-label" for="form3Example4cg">Password</label>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="password" id="form3Example4cdg" class="form-control form-control-lg" name="rpassword"/>
+                    <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                  </div>
+  
+  
+                  <div class="d-flex justify-content-center">
+                    <button type="submit"
+                      class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                  </div>
+  
+                  <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="{%url "ngologin" %}"
+                      class="fw-bold text-body"><u>Login here</u></a></p>
+  
+                </form>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  
+    {% if message %}
+        <div style="text-align:center;margin:0 auto;"class="alert alert-warning" role="alert">
+            {{ message }}
+        </div>
+    {% endif %}
+  </section>
+  {%endblock%}

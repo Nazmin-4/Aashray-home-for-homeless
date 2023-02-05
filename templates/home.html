@@ -1,0 +1,80 @@
+{% extends "index.html" %}
+{% block body %}
+{%load static %}
+<section id="hero" class="d-flex align-items-center">
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+      <h1>Aashray</h1>
+      <h2>A home from you is a hope for them</h2>
+     
+      <form method="get" action="{% url 'helpnow' %}">
+        <div class="d-flex justify-content-center justify-content-lg-start">        
+        <input type="text" class="form-control help" placeholder="enter zip code" name="zip" id="zip">
+        <button type="submit" class="btn-get-started scrollto">Help</button>
+      </div>
+    </form>
+    
+  </div>
+    <div class="col-lg-6 order-1 order-lg-2 hero-img" >
+      <img src="{% static 'pic1.jpg' %}" class="img-fluid " alt="">
+    </div>
+  </div>
+</div>
+
+</section>
+<section id="about" class="about">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>About Us</h2>
+    </div>
+
+    <div class="row content">
+      <div class="col-lg-6 a">
+        <p>Aashray is a social service nonprofit website providing proper Physical, Social and Economic
+          Rehabilitation to the needy who have no shelter.Aashray aims providing shelter by listing nerby NGO's or homeless shelters for direct help. 
+        </p>
+      </div>
+      <div class="col-lg-6 pt-4 pt-lg-0 a">
+        <p>For those with no place to go or in need of emergency shelter, local NGO's or homeless shelters provide a warm, safe place for men, women, and – whenever possible – families to stay.
+          </p>
+        {% comment %} <a href="#" class="btn-learn-more">Learn More</a> {% endcomment %}
+      </div>
+    </div>
+
+  </div>
+</section>
+<section id="services" class="services section-bg">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Services</h2>
+      <p>Aashray serves displaced Men,Women and Childres 365 days a year through:</p>
+    </div>
+
+    <div class="row">
+      <div class=" d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+        <div class="icon-box">
+          <div class="icon"><i class="fa-solid fa-house-chimney"></i></div>
+          <h4><a href="{% url 'helpnow' %}">Homeless Shelters</a></h4>
+          <p>To help any homeless you find at your place, Aashray serves help from nearby homeless shelters. Find help from any nearby shelters, and report them. Your help could provide food and lodging while equipping them with the resources and support needed to regain stability from those shelters.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+{%endblock%}
+{% comment %} {% static 'pic1.jpg' %}">{% extends "footer.html" %} {% endcomment %}
+
+    
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js,  then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+      </body>
+</html>
